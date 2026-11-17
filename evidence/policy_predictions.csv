@@ -1,0 +1,33 @@
+tenant,topic,text,ms,predicted,citation,version,baseline
+nook,shipping,What are the shipping charges below the free delivery threshold?,0.692,shipping,NOOK-SHIPPING,3.1,shipping
+nook,shipping,What is the minimum order for free postage?,0.425,shipping,NOOK-SHIPPING,3.1,shipping
+nook,returns,How many days is the return window after delivery?,0.43,returns,NOOK-RETURNS,3.2,returns
+nook,returns,Can I send back a personalised engraved item?,0.362,returns,NOOK-RETURNS,3.2,returns
+nook,warranty,Does the manufacturer warranty cover a defect?,0.491,warranty,NOOK-WARRANTY,2.1,warranty
+nook,warranty,How many months is the product guarantee?,0.54,warranty,NOOK-WARRANTY,2.1,warranty
+nook,refund,When does the refund credit reach the original payment method?,0.407,refund,NOOK-REFUND,2.2,refund
+nook,cancellation,Can I cancel a packed order before dispatch?,0.544,cancellation,NOOK-CANCELLATION,1.4,cancellation
+nook,changes,How do I update my delivery instructions to leave it at reception?,0.366,changes,NOOK-CHANGES,1.3,changes
+nook,payments,Are UPI payments accepted during checkout?,0.397,payments,NOOK-PAYMENTS,1.2,payments
+nook,support,What hours does the customer service desk work?,0.576,support,NOOK-SUPPORT,1.2,support
+nook,returns,Can I request a replacement for a wrong item?,0.42,returns,NOOK-RETURNS,3.2,returns
+trail,shipping,What does standard courier delivery cost below the minimum?,0.394,shipping,TRAIL-SHIPPING,3.1,shipping
+trail,shipping,Is there free shipping above a threshold?,0.458,shipping,TRAIL-SHIPPING,3.1,shipping
+trail,returns,How many days do I have to return a damaged item?,0.463,returns,TRAIL-RETURNS,3.2,returns
+trail,returns,Can personalised engraved tags be sent back?,0.362,returns,TRAIL-RETURNS,3.2,returns
+trail,warranty,What is the guarantee on manufacturing defects?,0.353,warranty,TRAIL-WARRANTY,2.1,warranty
+trail,warranty,How long is the warranty coverage?,0.377,warranty,TRAIL-WARRANTY,2.1,warranty
+trail,refund,How long is refund processing after approval?,0.347,refund,TRAIL-REFUND,2.2,refund
+trail,cancellation,When can I cancel my order before it is dispatched?,0.379,cancellation,TRAIL-CANCELLATION,1.4,cancellation
+trail,changes,Can I change delivery preference to call on arrival?,0.368,changes,TRAIL-CHANGES,1.3,changes
+trail,payments,Can I pay with a credit card or UPI?,0.367,payments,TRAIL-PAYMENTS,1.2,payments
+trail,support,When is the support desk open over the weekend?,0.347,support,TRAIL-SUPPORT,1.2,support
+trail,returns,Can I exchange a wrong item for a replacement?,0.36,returns,TRAIL-RETURNS,3.2,returns
+nook,ABSTAIN,Can you recommend a tax consultant?,0.37,ABSTAIN,,,ABSTAIN
+nook,ABSTAIN,What is the exchange rate for Canadian dollars?,0.336,ABSTAIN,,,returns
+nook,ABSTAIN,What does the weather look like tomorrow?,0.338,ABSTAIN,,,ABSTAIN
+nook,ABSTAIN,Can you provide international shipping to Iceland?,0.367,ABSTAIN,,,shipping
+trail,ABSTAIN,What size battery runs a solar telescope?,0.331,ABSTAIN,,,ABSTAIN
+trail,ABSTAIN,Do you support bitcoin as a cryptocurrency?,0.335,ABSTAIN,,,changes
+trail,ABSTAIN,Who is CEO of the courier company?,0.414,ABSTAIN,,,shipping
+trail,ABSTAIN,What are the warranties of a different store named Nook?,0.404,ABSTAIN,,,warranty

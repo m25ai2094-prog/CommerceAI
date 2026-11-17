@@ -1,0 +1,3341 @@
+[
+  {
+    "group": "Interface",
+    "name": "Browser bootstrap and origin guard",
+    "status": "PASS",
+    "observed": "Browser assets and an HTTP-only session loaded. A foreign origin was refused.",
+    "timings": [],
+    "transcript": []
+  },
+  {
+    "group": "Catalogue",
+    "name": "Facets and store-specific search",
+    "status": "PASS",
+    "observed": "Brand, category, whole-rupee price and availability filters respected the current store.",
+    "timings": [],
+    "transcript": []
+  },
+  {
+    "group": "Catalogue",
+    "name": "Product search and comparison",
+    "status": "PASS",
+    "observed": "Search returned an exact catalogue record. Comparison rejected a foreign SKU.",
+    "timings": [
+      {
+        "event": "ask_compare",
+        "ms": 2.148
+      },
+      {
+        "event": "compare_invalid",
+        "ms": 1.523
+      },
+      {
+        "event": "comparison_ready",
+        "ms": 3.766
+      },
+      {
+        "event": "ask_search",
+        "ms": 2.166
+      },
+      {
+        "event": "products_found",
+        "ms": 1.917
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Compare products",
+        "event": "ask_compare",
+        "message": "Enter two SKUs, separated by a comma.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "NL-101, TT-101",
+        "event": "compare_invalid",
+        "message": "Enter two different SKUs from the active store.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "NL-101, NL-102",
+        "event": "comparison_ready",
+        "message": "Compare listed prices, features, and availability.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Find a product",
+        "event": "ask_search",
+        "message": "Enter a product name, category, or SKU.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "desk lamp",
+        "event": "products_found",
+        "message": "1 product in this store.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Typed track request and shipment record",
+    "status": "PASS",
+    "observed": "A typed opening led to verification, then an owned shipment snapshot.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.061
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.362
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.582
+      },
+      {
+        "event": "order_tracked",
+        "ms": 2.178
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Where is my order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2402",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2402",
+        "rows": [
+          [
+            "Status",
+            "Dispatched"
+          ],
+          [
+            "Updated",
+            "2026-11-12"
+          ],
+          [
+            "Total",
+            "₹799.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Carrier",
+            "Sample Parcel"
+          ],
+          [
+            "Tracking ID",
+            "NOOK-SHIP-2402"
+          ],
+          [
+            "Item 01",
+            "Dune Desk Mat × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2402"
+      }
+    ]
+  },
+  {
+    "group": "Isolation",
+    "name": "Anonymous and other-customer order denial",
+    "status": "PASS",
+    "observed": "Anonymous orders were denied. Both foreign and nonexistent references produced ownership-safe messages.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.952
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.786
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.607
+      },
+      {
+        "event": "rejected",
+        "ms": 1.453
+      },
+      {
+        "event": "rejected",
+        "ms": 1.44
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2405",
+        "event": "rejected",
+        "message": "That order is unavailable for your verified profile.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-9999",
+        "event": "rejected",
+        "message": "That order is unavailable for your verified profile.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Isolation",
+    "name": "Tenant switch and colliding order reference",
+    "status": "PASS",
+    "observed": "Switching stores revoked the former cookie and required verification. A colliding reference returned tenant-specific items.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.851
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.328
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.192
+      },
+      {
+        "event": "order_tracked",
+        "ms": 1.824
+      },
+      {
+        "event": "ask_identity",
+        "ms": 2.319
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.634
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.489
+      },
+      {
+        "event": "order_tracked",
+        "ms": 1.892
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Packing"
+          ],
+          [
+            "Updated",
+            "2026-11-14"
+          ],
+          [
+            "Total",
+            "₹1,799.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Item 01",
+            "Arc Desk Lamp × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2401"
+      },
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Packing"
+          ],
+          [
+            "Updated",
+            "2026-11-14"
+          ],
+          [
+            "Total",
+            "₹2,499.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Item 01",
+            "Ridge Daypack × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2401"
+      }
+    ]
+  },
+  {
+    "group": "Verification",
+    "name": "OTP scope, cooldown, expiry and lock",
+    "status": "PASS",
+    "observed": "Challenge secrecy, cooldown, malformed input, expiry and three-wrong-code lock all held.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.469
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.394
+      },
+      {
+        "event": "discarded",
+        "ms": 1.062
+      },
+      {
+        "event": "ask_identity",
+        "ms": 1.934
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.301
+      },
+      {
+        "event": "code_cooldown",
+        "ms": 1.224
+      },
+      {
+        "event": "code_format",
+        "ms": 1.132
+      },
+      {
+        "event": "code_expired",
+        "ms": 0.997
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.452
+      },
+      {
+        "event": "code_wrong",
+        "ms": 1.039
+      },
+      {
+        "event": "code_wrong",
+        "ms": 1.127
+      },
+      {
+        "event": "code_locked",
+        "ms": 1.08
+      },
+      {
+        "event": "code_locked",
+        "ms": 1.538
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "discarded",
+        "message": "The draft was discarded. You can choose another task.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_cooldown",
+        "message": "Check the demo inbox for a current code.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_format",
+        "message": "Enter the valid six-digit code for this session. Request a new code if it expired.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_expired",
+        "message": "Enter the valid six-digit code for this session. Request a new code if it expired.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_issued",
+        "message": "Check the demo inbox for a current code.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_wrong",
+        "message": "Enter the valid six-digit code for this session. Request a new code if it expired.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_wrong",
+        "message": "Enter the valid six-digit code for this session. Request a new code if it expired.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_locked",
+        "message": "Enter the valid six-digit code for this session. Request a new code if it expired.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "code_locked",
+        "message": "Check the demo inbox for a current code.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Verification",
+    "name": "Expired verified grant and saved reply",
+    "status": "PASS",
+    "observed": "The expired grant blocked cached protected data and a pending write.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.979
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.372
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.88
+      },
+      {
+        "event": "review",
+        "ms": 2.173
+      },
+      {
+        "event": "confirm_required",
+        "ms": 0.984
+      },
+      {
+        "event": "verification_expired",
+        "ms": 1.062
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2401"
+          ],
+          [
+            "Current status",
+            "Packing"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "still checking",
+        "event": "confirm_required",
+        "message": "Use Confirm to send this review, or Cancel draft to discard it.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "verification_expired",
+        "message": "Verification expired. Choose a demo profile to restart this task.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Confirmed cancellation and replay",
+    "status": "PASS",
+    "observed": "Confirmation changed one owned provider row. Retry replayed it and conflicting content was rejected.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.066
+      },
+      {
+        "event": "code_issued",
+        "ms": 2.186
+      },
+      {
+        "event": "ask_order",
+        "ms": 2.122
+      },
+      {
+        "event": "review",
+        "ms": 1.999
+      },
+      {
+        "event": "confirm_required",
+        "ms": 1.215
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.911
+      },
+      {
+        "event": "confirmed",
+        "ms": 0.946
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2401"
+          ],
+          [
+            "Current status",
+            "Packing"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "yes I suppose",
+        "event": "confirm_required",
+        "message": "Use Confirm to send this review, or Cancel draft to discard it.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Cancelled"
+          ],
+          [
+            "Provider",
+            "Local simulated adapter"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": "ORD-2401"
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Cancelled"
+          ],
+          [
+            "Provider",
+            "Local simulated adapter"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": "ORD-2401"
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Dispatched order and discarded draft",
+    "status": "PASS",
+    "observed": "Dispatched orders were ineligible and discarding a draft wrote no operation.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.016
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.316
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.395
+      },
+      {
+        "event": "rejected",
+        "ms": 1.576
+      },
+      {
+        "event": "review",
+        "ms": 1.816
+      },
+      {
+        "event": "discarded",
+        "ms": 1.322
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2402",
+        "event": "rejected",
+        "message": "This order is dispatched. The store allows changes before dispatch.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2401"
+          ],
+          [
+            "Current status",
+            "Packing"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Cancel draft",
+        "event": "discarded",
+        "message": "The draft was discarded. You can choose another task.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Concurrent cancellation confirmation",
+    "status": "PASS",
+    "observed": "Two independently verified drafts competed. Exactly one confirmation committed.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.273
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.25
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.583
+      },
+      {
+        "event": "review",
+        "ms": 2.05
+      },
+      {
+        "event": "ask_identity",
+        "ms": 1.821
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.514
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.48
+      },
+      {
+        "event": "review",
+        "ms": 1.779
+      },
+      {
+        "event": "confirmed",
+        "ms": 2.156
+      },
+      {
+        "event": "rejected",
+        "ms": 3.606
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2401"
+          ],
+          [
+            "Current status",
+            "Packing"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2401"
+          ],
+          [
+            "Current status",
+            "Packing"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Cancelled"
+          ],
+          [
+            "Provider",
+            "Local simulated adapter"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": "ORD-2401"
+      },
+      {
+        "echo": "Confirm",
+        "event": "rejected",
+        "message": "This order is cancelled. The store allows changes before dispatch.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Delivery preference validation",
+    "status": "PASS",
+    "observed": "The selected preference persisted after review. Arbitrary address text was refused.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.161
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.508
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.313
+      },
+      {
+        "event": "ask_preference",
+        "ms": 1.457
+      },
+      {
+        "event": "invalid_choice",
+        "ms": 1.07
+      },
+      {
+        "event": "review",
+        "ms": 2.101
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.793
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Change delivery preference",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2407",
+        "event": "ask_preference",
+        "message": "Which delivery preference should the store use?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Shipping to a new address",
+        "event": "invalid_choice",
+        "message": "Choose a listed option.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Call on arrival",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Change delivery preference",
+        "rows": [
+          [
+            "Order",
+            "ORD-2407"
+          ],
+          [
+            "Current status",
+            "Confirmed"
+          ],
+          [
+            "New preference",
+            "Call on arrival"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CHANGES",
+          "title": "Delivery preference changes",
+          "version": "1.3",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "ORD-2407",
+        "rows": [
+          [
+            "Status",
+            "Preference saved"
+          ],
+          [
+            "Preference",
+            "Call on arrival"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CHANGES",
+          "title": "Delivery preference changes",
+          "version": "1.3",
+          "effective": "2025-01-01"
+        },
+        "reference": "ORD-2407"
+      }
+    ]
+  },
+  {
+    "group": "After-sales",
+    "name": "Replacement intake and status",
+    "status": "PASS",
+    "observed": "The replacement case included its policy version and reappeared in the owned order.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.121
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.37
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.796
+      },
+      {
+        "event": "ask_item",
+        "ms": 1.86
+      },
+      {
+        "event": "ask_reason",
+        "ms": 1.389
+      },
+      {
+        "event": "ask_resolution",
+        "ms": 1.128
+      },
+      {
+        "event": "review",
+        "ms": 1.878
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.928
+      },
+      {
+        "event": "ask_order",
+        "ms": 2.027
+      },
+      {
+        "event": "order_tracked",
+        "ms": 1.888
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Request a return or replacement",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2403",
+        "event": "ask_item",
+        "message": "Choose the order line for your request.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "01",
+        "event": "ask_reason",
+        "message": "What is the reason for returning the item?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Damaged",
+        "event": "ask_resolution",
+        "message": "Which resolution would you prefer?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Replacement",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Request a return or replacement",
+        "rows": [
+          [
+            "Order",
+            "ORD-2403"
+          ],
+          [
+            "Current status",
+            "Delivered"
+          ],
+          [
+            "Item",
+            "Arc Desk Lamp"
+          ],
+          [
+            "Reason",
+            "Damaged"
+          ],
+          [
+            "Resolution",
+            "Replacement"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "RET-36DB7715B8",
+        "rows": [
+          [
+            "Status",
+            "Requested"
+          ],
+          [
+            "Order",
+            "ORD-2403"
+          ],
+          [
+            "Item",
+            "Arc Desk Lamp"
+          ],
+          [
+            "Resolution",
+            "Replacement"
+          ],
+          [
+            "Next step",
+            "Support will review your request."
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": "RET-36DB7715B8"
+      },
+      {
+        "echo": "Track an order",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2403",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2403",
+        "rows": [
+          [
+            "Status",
+            "Delivered"
+          ],
+          [
+            "Updated",
+            "2026-11-10"
+          ],
+          [
+            "Total",
+            "₹2,898.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Carrier",
+            "Sample Parcel"
+          ],
+          [
+            "Tracking ID",
+            "NOOK-SHIP-2403"
+          ],
+          [
+            "Item 01",
+            "Arc Desk Lamp × 1"
+          ],
+          [
+            "Item 02",
+            "Personalised Name Plate × 1"
+          ],
+          [
+            "RET-36DB7715B8",
+            "Replacement · Requested"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2403"
+      }
+    ]
+  },
+  {
+    "group": "After-sales",
+    "name": "Different return windows across stores",
+    "status": "PASS",
+    "observed": "The same 20-day-old order was rejected by the 14-day store and accepted by the 30-day store.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.793
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.401
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.434
+      },
+      {
+        "event": "ask_item",
+        "ms": 1.291
+      },
+      {
+        "event": "ask_reason",
+        "ms": 1.464
+      },
+      {
+        "event": "ask_resolution",
+        "ms": 1.138
+      },
+      {
+        "event": "rejected",
+        "ms": 1.298
+      },
+      {
+        "event": "ask_identity",
+        "ms": 1.719
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.409
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.334
+      },
+      {
+        "event": "ask_item",
+        "ms": 1.593
+      },
+      {
+        "event": "ask_reason",
+        "ms": 1.263
+      },
+      {
+        "event": "ask_resolution",
+        "ms": 1.066
+      },
+      {
+        "event": "review",
+        "ms": 1.569
+      },
+      {
+        "event": "confirmed",
+        "ms": 2.12
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Request a return or replacement",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2409",
+        "event": "ask_item",
+        "message": "Choose the order line for your request.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "01",
+        "event": "ask_reason",
+        "message": "What is the reason for returning the item?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Damaged",
+        "event": "ask_resolution",
+        "message": "Which resolution would you prefer?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Replacement",
+        "event": "rejected",
+        "message": "The store's 14-day return window has closed.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Request a return or replacement",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2409",
+        "event": "ask_item",
+        "message": "Choose the order line for your request.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "01",
+        "event": "ask_reason",
+        "message": "What is the reason for returning the item?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Damaged",
+        "event": "ask_resolution",
+        "message": "Which resolution would you prefer?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Replacement",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Request a return or replacement",
+        "rows": [
+          [
+            "Order",
+            "ORD-2409"
+          ],
+          [
+            "Current status",
+            "Delivered"
+          ],
+          [
+            "Item",
+            "Ridge Daypack"
+          ],
+          [
+            "Reason",
+            "Damaged"
+          ],
+          [
+            "Resolution",
+            "Replacement"
+          ]
+        ],
+        "citation": {
+          "source": "TRAIL-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "RET-D90AE4FC5A",
+        "rows": [
+          [
+            "Status",
+            "Requested"
+          ],
+          [
+            "Order",
+            "ORD-2409"
+          ],
+          [
+            "Item",
+            "Ridge Daypack"
+          ],
+          [
+            "Resolution",
+            "Replacement"
+          ],
+          [
+            "Next step",
+            "Support will review your request."
+          ]
+        ],
+        "citation": {
+          "source": "TRAIL-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": "RET-D90AE4FC5A"
+      }
+    ]
+  },
+  {
+    "group": "After-sales",
+    "name": "Personalised line exclusion",
+    "status": "PASS",
+    "observed": "The active policy refused the engraved line and created no return.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.985
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.319
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.526
+      },
+      {
+        "event": "ask_item",
+        "ms": 1.317
+      },
+      {
+        "event": "ask_reason",
+        "ms": 1.386
+      },
+      {
+        "event": "ask_resolution",
+        "ms": 1.084
+      },
+      {
+        "event": "rejected",
+        "ms": 1.325
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Request a return or replacement",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2403",
+        "event": "ask_item",
+        "message": "Choose the order line for your request.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "02",
+        "event": "ask_reason",
+        "message": "What is the reason for returning the item?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Damaged",
+        "event": "ask_resolution",
+        "message": "Which resolution would you prefer?",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Replacement",
+        "event": "rejected",
+        "message": "The active policy excludes personalised items.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "After-sales",
+    "name": "Provider refund status is read-only",
+    "status": "PASS",
+    "observed": "Refund reads followed tenant-owned orders and caused no financial or provider mutation.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.841
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.226
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.562
+      },
+      {
+        "event": "refund_read",
+        "ms": 1.96
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.735
+      },
+      {
+        "event": "refund_missing",
+        "ms": 1.587
+      },
+      {
+        "event": "ask_identity",
+        "ms": 1.837
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.249
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.749
+      },
+      {
+        "event": "refund_read",
+        "ms": 1.785
+      },
+      {
+        "event": "ask_order",
+        "ms": 2.025
+      },
+      {
+        "event": "refund_missing",
+        "ms": 1.639
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Check refund status",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2404",
+        "event": "refund_read",
+        "message": "Here is the provider's recorded refund status.",
+        "title": "ORD-2404",
+        "rows": [
+          [
+            "RF-901",
+            "Processed · ₹399.00 · 2026-11-15"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2404"
+      },
+      {
+        "echo": "Check refund status",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "refund_missing",
+        "message": "The provider has no refund record for this order.",
+        "title": "ORD-2401",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Check refund status",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2404",
+        "event": "refund_read",
+        "message": "Here is the provider's recorded refund status.",
+        "title": "ORD-2404",
+        "rows": [
+          [
+            "RF-901",
+            "In review · ₹649.00 · 2026-11-15"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2404"
+      },
+      {
+        "echo": "Check refund status",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "refund_missing",
+        "message": "The provider has no refund record for this order.",
+        "title": "ORD-2401",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Provider outage and retry",
+    "status": "PASS",
+    "observed": "The affected tenant received an unavailable reply and retry. The other store remained responsive.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.011
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.334
+      },
+      {
+        "event": "provider_unavailable",
+        "ms": 1.435
+      },
+      {
+        "event": "provider_unavailable",
+        "ms": 1.244
+      },
+      {
+        "event": "ask_identity",
+        "ms": 2.03
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.376
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.241
+      },
+      {
+        "event": "order_tracked",
+        "ms": 1.563
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "provider_unavailable",
+        "message": "The store's order provider is currently unavailable. Try again or contact support.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Retry",
+        "event": "provider_unavailable",
+        "message": "The store's order provider is currently unavailable. Try again or contact support.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Packing"
+          ],
+          [
+            "Updated",
+            "2026-11-14"
+          ],
+          [
+            "Total",
+            "₹2,499.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Item 01",
+            "Ridge Daypack × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2401"
+      }
+    ]
+  },
+  {
+    "group": "Knowledge",
+    "name": "Tenant citations for the same policy question",
+    "status": "PASS",
+    "observed": "Both tenants answered the same question from different current evidence.",
+    "timings": [
+      {
+        "event": "ask_policy",
+        "ms": 1.664
+      },
+      {
+        "event": "policy_answer",
+        "ms": 1.671
+      },
+      {
+        "event": "ask_policy",
+        "ms": 1.72
+      },
+      {
+        "event": "policy_answer",
+        "ms": 2.058
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Ask about a store policy",
+        "event": "ask_policy",
+        "message": "Ask a question about this store's shipping, returns, warranty, or other policies.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "How many days is the return window?",
+        "event": "policy_answer",
+        "message": "Request an eligible return or replacement within 14 calendar days of delivery. Personalised items are excluded. The team reviews the condition and requested resolution.",
+        "title": "Store policy",
+        "rows": [],
+        "citation": {
+          "source": "NOOK-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Ask about a store policy",
+        "event": "ask_policy",
+        "message": "Ask a question about this store's shipping, returns, warranty, or other policies.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "How many days is the return window?",
+        "event": "policy_answer",
+        "message": "Request an eligible return or replacement within 30 calendar days of delivery. Personalised items are excluded. The team reviews the condition and requested resolution.",
+        "title": "Store policy",
+        "rows": [],
+        "citation": {
+          "source": "TRAIL-RETURNS",
+          "title": "Returns and replacements",
+          "version": "3.2",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Knowledge",
+    "name": "Missing and conflicting policy evidence",
+    "status": "PASS",
+    "observed": "Unknown and conflicting evidence produced an abstention and an agent option.",
+    "timings": [
+      {
+        "event": "ask_policy",
+        "ms": 1.796
+      },
+      {
+        "event": "policy_abstain",
+        "ms": 2.007
+      },
+      {
+        "event": "ask_policy",
+        "ms": 2.114
+      },
+      {
+        "event": "policy_abstain",
+        "ms": 1.892
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Ask about a store policy",
+        "event": "ask_policy",
+        "message": "Ask a question about this store's shipping, returns, warranty, or other policies.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Who discovered Neptune?",
+        "event": "policy_abstain",
+        "message": "I could not find a clear answer in this store's current policies. Try a more specific question or ask an agent.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Ask about a store policy",
+        "event": "ask_policy",
+        "message": "Ask a question about this store's shipping, returns, warranty, or other policies.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "How many days is the return window?",
+        "event": "policy_abstain",
+        "message": "I could not find a clear answer in this store's current policies. Try a more specific question or ask an agent.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Support",
+    "name": "Agent claim, reply, resolution and tenant denial",
+    "status": "PASS",
+    "observed": "Customer and assigned agent shared a redacted case. A foreign admin could neither read nor mutate it.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.068
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.298
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.009
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.21
+      },
+      {
+        "event": "review",
+        "ms": 1.042
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.914
+      },
+      {
+        "event": "ask_ticket",
+        "ms": 1.867
+      },
+      {
+        "event": "ticket_read",
+        "ms": 1.706
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Open a support ticket",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Delivery",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Open a support ticket",
+        "rows": [
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Summary",
+            "The fictional parcel needs a follow-up at [email]."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-DA3631C024",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Priority",
+            "Standard"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-DA3631C024"
+      },
+      {
+        "echo": "Check a ticket",
+        "event": "ask_ticket",
+        "message": "Enter or choose your ticket reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "TKT-DA3631C024",
+        "event": "ticket_read",
+        "message": "Here is the saved ticket and any staff updates.",
+        "title": "TKT-DA3631C024",
+        "rows": [
+          [
+            "Status",
+            "Resolved"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Support",
+            "We checked your demo parcel."
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-DA3631C024"
+      }
+    ]
+  },
+  {
+    "group": "Support",
+    "name": "Duplicate human handoff",
+    "status": "PASS",
+    "observed": "A repeated handoff linked the same open case and counted one new escalation.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.272
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.318
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.04
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.18
+      },
+      {
+        "event": "review",
+        "ms": 0.995
+      },
+      {
+        "event": "confirmed",
+        "ms": 2.275
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.76
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.021
+      },
+      {
+        "event": "review",
+        "ms": 1.162
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.72
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Talk to an agent",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Delivery",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Talk to an agent",
+        "rows": [
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Summary",
+            "The fictional parcel needs a follow-up at [email]."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-4AACFCD6E0",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Priority",
+            "Standard"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-4AACFCD6E0"
+      },
+      {
+        "echo": "Talk to an agent",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Other",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Talk to an agent",
+        "rows": [
+          [
+            "Category",
+            "Other"
+          ],
+          [
+            "Summary",
+            "Follow up with the same support agent."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-4AACFCD6E0",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Queue",
+            "Support"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-4AACFCD6E0"
+      }
+    ]
+  },
+  {
+    "group": "Support",
+    "name": "Staff role and assignment checks",
+    "status": "PASS",
+    "observed": "Tenant and role checks excluded a foreign credential, and another agent could not update the assigned ticket.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 1.895
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.524
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.411
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.106
+      },
+      {
+        "event": "review",
+        "ms": 1.187
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.982
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Talk to an agent",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Delivery",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Talk to an agent",
+        "rows": [
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Summary",
+            "The fictional parcel needs a follow-up at [email]."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-DAAE3B44DB",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Priority",
+            "Standard"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-DAAE3B44DB"
+      }
+    ]
+  },
+  {
+    "group": "Analytics",
+    "name": "Scoped counters and p95",
+    "status": "PASS",
+    "observed": "Admin analytics published the activity counts and denominator for only the active tenant.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.235
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.608
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.214
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.024
+      },
+      {
+        "event": "review",
+        "ms": 1.124
+      },
+      {
+        "event": "confirmed",
+        "ms": 2.032
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Talk to an agent",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Delivery",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Talk to an agent",
+        "rows": [
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Summary",
+            "The fictional parcel needs a follow-up at [email]."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-50C12EB2DF",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Priority",
+            "Standard"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-50C12EB2DF"
+      }
+    ]
+  },
+  {
+    "group": "Audit",
+    "name": "Pseudonymous append-only audit",
+    "status": "PASS",
+    "observed": "Auditing stored pseudonym, target and correlation, and the database rejected in-place edits.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.201
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.506
+      },
+      {
+        "event": "ask_category",
+        "ms": 1.29
+      },
+      {
+        "event": "ask_details",
+        "ms": 1.189
+      },
+      {
+        "event": "review",
+        "ms": 1.281
+      },
+      {
+        "event": "confirmed",
+        "ms": 2.18
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Talk to an agent",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_category",
+        "message": "Choose the issue category for the support queue.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Delivery",
+        "event": "ask_details",
+        "message": "Describe the issue in a short fictional message.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Issue details entered]",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Talk to an agent",
+        "rows": [
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Summary",
+            "The fictional parcel needs a follow-up at [email]."
+          ]
+        ],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "TKT-D7CB80D33C",
+        "rows": [
+          [
+            "Status",
+            "Open"
+          ],
+          [
+            "Category",
+            "Delivery"
+          ],
+          [
+            "Priority",
+            "Standard"
+          ]
+        ],
+        "citation": null,
+        "reference": "TKT-D7CB80D33C"
+      }
+    ]
+  },
+  {
+    "group": "Orders",
+    "name": "Restart persistence",
+    "status": "PASS",
+    "observed": "A separate HTTP server and fresh browser session read the saved cancellation.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.217
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.353
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.32
+      },
+      {
+        "event": "review",
+        "ms": 1.839
+      },
+      {
+        "event": "confirmed",
+        "ms": 1.903
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Cancel an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2407",
+        "event": "review",
+        "message": "Check the details, then confirm or discard this request.",
+        "title": "Cancel an order",
+        "rows": [
+          [
+            "Order",
+            "ORD-2407"
+          ],
+          [
+            "Current status",
+            "Confirmed"
+          ],
+          [
+            "After confirmation",
+            "Cancelled in the simulated provider"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": null
+      },
+      {
+        "echo": "Confirm",
+        "event": "confirmed",
+        "message": "The store recorded the confirmed request.",
+        "title": "ORD-2407",
+        "rows": [
+          [
+            "Status",
+            "Cancelled"
+          ],
+          [
+            "Provider",
+            "Local simulated adapter"
+          ]
+        ],
+        "citation": {
+          "source": "NOOK-CANCELLATION",
+          "title": "Order cancellation",
+          "version": "1.4",
+          "effective": "2025-01-01"
+        },
+        "reference": "ORD-2407"
+      }
+    ]
+  },
+  {
+    "group": "Interface",
+    "name": "Verified order follow-up and reset",
+    "status": "PASS",
+    "observed": "The remembered order resolved only inside its verified session. Reset removed that context.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.046
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.527
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.537
+      },
+      {
+        "event": "order_tracked",
+        "ms": 1.604
+      },
+      {
+        "event": "refund_read",
+        "ms": 2.962
+      },
+      {
+        "event": "ask_identity",
+        "ms": 2.136
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.309
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.514
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2404",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2404",
+        "rows": [
+          [
+            "Status",
+            "Delivered"
+          ],
+          [
+            "Updated",
+            "2026-11-05"
+          ],
+          [
+            "Total",
+            "₹399.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Carrier",
+            "Sample Parcel"
+          ],
+          [
+            "Tracking ID",
+            "NOOK-SHIP-2404"
+          ],
+          [
+            "Item 01",
+            "Loop Cable Set × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2404"
+      },
+      {
+        "echo": "Check my refund status on that order",
+        "event": "refund_read",
+        "message": "Here is the provider's recorded refund status.",
+        "title": "ORD-2404",
+        "rows": [
+          [
+            "RF-901",
+            "Processed · ₹399.00 · 2026-11-15"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2404"
+      },
+      {
+        "echo": "Check my refund status on that order",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Interface",
+    "name": "Repeated fallback recovery",
+    "status": "PASS",
+    "observed": "Repeated unrelated inputs offered human support without opening a case automatically.",
+    "timings": [
+      {
+        "event": "fallback",
+        "ms": 1.611
+      },
+      {
+        "event": "fallback",
+        "ms": 2.333
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "🪐",
+        "event": "fallback",
+        "message": "I can help with this store's products, orders and support policies.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "🌧",
+        "event": "fallback",
+        "message": "I can help with this store's products, orders and support policies. I can also queue an agent.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      }
+    ]
+  },
+  {
+    "group": "Interface",
+    "name": "Rasa parse adapter contract",
+    "status": "PASS",
+    "observed": "The local parse stub received one redacted opening turn. Verification and order fields stayed local.",
+    "timings": [
+      {
+        "event": "ask_identity",
+        "ms": 2.646
+      },
+      {
+        "event": "code_issued",
+        "ms": 1.385
+      },
+      {
+        "event": "ask_order",
+        "ms": 1.185
+      },
+      {
+        "event": "order_tracked",
+        "ms": 2.134
+      }
+    ],
+    "transcript": [
+      {
+        "echo": "Track an order for [email]",
+        "event": "ask_identity",
+        "message": "Use a demo profile to verify before opening account records.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Demo identity entered]",
+        "event": "code_issued",
+        "message": "Open the demo inbox. A matching profile receives a code for this session.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "[Verification input]",
+        "event": "ask_order",
+        "message": "Choose one of your orders or enter its reference.",
+        "title": "",
+        "rows": [],
+        "citation": null,
+        "reference": null
+      },
+      {
+        "echo": "ORD-2401",
+        "event": "order_tracked",
+        "message": "Here is the latest record from the store.",
+        "title": "ORD-2401",
+        "rows": [
+          [
+            "Status",
+            "Packing"
+          ],
+          [
+            "Updated",
+            "2026-11-14"
+          ],
+          [
+            "Total",
+            "₹1,799.00"
+          ],
+          [
+            "Delivery preference",
+            "Hand to recipient"
+          ],
+          [
+            "Item 01",
+            "Arc Desk Lamp × 1"
+          ]
+        ],
+        "citation": null,
+        "reference": "ORD-2401"
+      }
+    ]
+  }
+]

@@ -1,0 +1,255 @@
+version: "3.1"
+
+nlu:
+- intent: cancel_order
+  examples: |
+    - cancel my order
+    - please stop this purchase
+    - void my order ORD-2401
+    - I want to cancel that order
+    - call off my purchase
+    - I no longer want the order to be sent
+    - cancel the unshipped package
+    - can I cancel order ORD-2407
+    - stop delivery on this purchase
+    - please do not send my order
+    - withdraw an order before dispatch
+    - abort that purchase
+    - I want the store to cancel my order
+    - help me stop a pending order
+    - cancel this shipment if possible
+    - please reverse the order before shipping
+- intent: compare_products
+  examples: |
+    - compare these two products
+    - show differences between NL-101 and NL-102
+    - compare a lamp and a laptop stand
+    - which of these two bottles is cheaper
+    - put both bags side by side
+    - compare price and stock for two items
+    - compare NL-105 with NL-103
+    - can I see a comparison
+    - which one has better features
+    - weigh this lamp against the other
+    - compare the daypack to the dry bag
+    - match two product specifications side by side
+    - what is different about these two items
+    - contrast both products for me
+    - show a side by side product view
+    - which of these two is available
+- intent: create_ticket
+  examples: |
+    - open a support ticket
+    - file a complaint about a package
+    - create a new help case
+    - register a delivery complaint
+    - log an issue for my order
+    - file a formal support request
+    - create a case for the damaged box
+    - report a product issue to support
+    - start a service ticket
+    - raise a new ticket for a billing issue
+    - I want to submit a complaint
+    - record a case about this order
+    - open a complaint with customer support
+    - start an issue report
+    - register my problem in the queue
+    - create a complaint reference
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye for now
+    - see you later
+    - that is all today
+    - I will leave now
+    - talk later
+    - bye bye
+    - thanks I am done
+    - have a good day
+    - see you soon
+    - finish the conversation
+    - I am signing off
+    - catch you later
+    - take care
+    - end this chat
+    - thank you and goodbye
+- intent: greet
+  examples: |
+    - hello
+    - hey there
+    - good morning
+    - hi commerce assistant
+    - good afternoon
+    - hello support
+    - greetings
+    - hey friend
+    - hi there
+    - good evening
+    - howdy
+    - nice to meet you
+    - hello hello
+    - hi team
+    - hey chatbot
+    - warm greetings
+- intent: modify_order
+  examples: |
+    - change my delivery preference
+    - edit delivery instructions on my order
+    - please let the courier call first
+    - update that order's delivery option
+    - change how the package is handed over
+    - ask the driver to call on arrival
+    - add a reception delivery note
+    - can I update delivery instructions
+    - modify shipping preferences for ORD-2401
+    - give it to reception instead
+    - change who should take the parcel
+    - update preferences before dispatch
+    - I want to change the delivery address
+    - edit my order delivery preference
+    - change handing over details
+    - set a new delivery instruction
+- intent: out_of_scope
+  examples: |
+    - write a poem about rain
+    - what is the weather in Delhi
+    - calculate my science marks
+    - set an alarm for tomorrow
+    - tell me who won the cricket match
+    - give me a recipe for pasta
+    - solve a quadratic equation
+    - what is the current air quality
+    - tell me an astronomy joke
+    - play a song
+    - can you book a railway ticket
+    - translate a letter into French
+    - what is a neutron star
+    - help me fix my laptop's operating system
+    - what is today's stock price
+    - tell me about ancient Rome
+- intent: policy_question
+  examples: |
+    - what are the shipping charges
+    - how many days is the return window
+    - what is the warranty policy
+    - what payment methods are accepted
+    - is there free delivery
+    - how much do you charge for shipping
+    - are personalised items excluded from returns
+    - how long does the standard warranty last
+    - what is the store's cancellation policy
+    - how long do approved refunds take
+    - what are the support hours
+    - tell me about replacement rules
+    - is there a shipping fee threshold
+    - which cards are accepted
+    - what are the standard dispatch rules
+    - can all orders qualify for replacement
+- intent: refund_status
+  examples: |
+    - check my refund status
+    - is my refund processed
+    - what is the status of the refund for ORD-2404
+    - has the refund been credited
+    - where is the money from my refund
+    - check my reimbursement record
+    - what is the amount on the refund receipt
+    - show refund status on that order
+    - can I see my refund amount
+    - did the payment reversal finish
+    - look up my order refund
+    - when was my refund processed
+    - is the return payment still in review
+    - read the status of my refund
+    - find the refund transaction on this order
+    - did my money come back yet
+- intent: request_human
+  examples: |
+    - talk to an agent
+    - I want to speak with a person
+    - please connect me to human support
+    - is a live representative available
+    - let me chat with an actual person
+    - hand me over to an agent
+    - I need a human to handle this
+    - transfer me to the support team
+    - get an advisor for me
+    - escalate this to a person
+    - I want assistance from a human
+    - can a staff member help
+    - put me in the human support queue
+    - speak with a service representative
+    - I would like an agent
+    - connect me to live help
+- intent: request_return
+  examples: |
+    - I want to return my order
+    - request a product replacement
+    - help me send this damaged item back
+    - create a return for ORD-2403
+    - the item arrived broken and I want a new one
+    - get a replacement for this bag
+    - I received the wrong item and need an exchange
+    - start a return request
+    - return this delivered item
+    - replace that defective product
+    - I changed my mind and want to send it back
+    - can I return the lamp I ordered
+    - open a replacement request
+    - I want to exchange an item from my order
+    - return a damaged purchase
+    - start a replacement for the wrong item
+- intent: search_product
+  examples: |
+    - find a desk lamp
+    - search for a trekking bag
+    - show the product catalogue
+    - looking for a steel bottle
+    - find SKU NL-101
+    - is a planter available
+    - show me your desk mats
+    - browse lighting products
+    - which laptop stands are in stock
+    - find a bottle in the store
+    - search accessories
+    - list bags under the lighting category
+    - what products do you sell
+    - pull up item TT-104
+    - show home office gear
+    - help me find a product
+- intent: ticket_status
+  examples: |
+    - check a ticket
+    - what is my case status
+    - track a support ticket
+    - read the reply on my complaint
+    - any update on my support ticket
+    - is my issue ticket resolved
+    - look up the reference for my case
+    - show my support case history
+    - has support replied to my complaint
+    - get the status of an existing case
+    - see a saved ticket
+    - check my open case
+    - is my complaint still pending
+    - show replies from support
+    - did an agent close my ticket
+    - tell me what happened with my support case
+- intent: track_order
+  examples: |
+    - where is my order
+    - track my parcel
+    - show the shipment status
+    - has my item been dispatched
+    - check tracking for ORD-2401
+    - when will my order arrive
+    - show the courier and tracking number
+    - what is the latest status of my order
+    - is my package on the way
+    - track that order
+    - get my order details
+    - look up my shipment
+    - can I see the items I ordered
+    - has my purchase arrived yet
+    - open order ORD-2402
+    - what happened to this shipment

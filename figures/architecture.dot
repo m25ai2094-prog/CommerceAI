@@ -1,0 +1,21 @@
+digraph architecture {
+  graph [bgcolor="white", rankdir=TB, nodesep=.33, ranksep=.48, pad=.2];
+  node [shape=box, style="rounded,filled", color="#59756b", fillcolor="#f0f3e9", fontname="DejaVu Sans", fontsize=12, margin=".18,.10"];
+  edge [color="#556a63", fontname="DejaVu Sans", fontsize=9, arrowsize=.67];
+  browser [label="Browser workspaces\nCatalogue, orders, support and staff desk", fillcolor="#e4ede1"];
+  gateway [label="HTTP gateway\nSame-origin JSON and opaque tenant session"];
+  engine [label="Dialogue and verification\nRoles, typed fields, review and confirmation"];
+  nlu [label="Opening intent\nPortable classifier or optional Rasa", fillcolor="#f8e4d3"];
+  knowledge [label="Knowledge service\nTenant, version and effective date filters"];
+  adapter [label="Commerce adapter\nRules and provider-state recheck"];
+  store [label="SQLite sandbox\nCatalogue, orders, evidence, tickets and audit", fillcolor="#e4ede1"];
+  browser -> gateway [label="browser session"];
+  gateway -> engine [label="customer turns"];
+  gateway -> store [label="role-scoped staff routes", minlen=3];
+  engine -> nlu [label="opening text", dir=both];
+  engine -> knowledge [label="policy question"];
+  engine -> adapter [label="verified request"];
+  knowledge -> store;
+  adapter -> store;
+  {rank=same; nlu; knowledge; adapter}
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>CommerceAI | Store support</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <aside class="rail" aria-label="Store navigation">
+    <a class="wordmark" href="/" aria-label="CommerceAI home"><span class="brand-symbol" aria-hidden="true">C</span>CommerceAI</a>
+    <div class="store-picker">
+      <p class="rail-label">DEMO STORES</p>
+      <div id="stores" class="stores" aria-label="Switch store"></div>
+    </div>
+    <nav id="navigation" aria-label="Workspace">
+      <button type="button" data-view="catalogue" class="selected"><span aria-hidden="true">▦</span> Catalogue</button>
+      <button type="button" data-view="orders"><span aria-hidden="true">▤</span> Orders</button>
+      <button type="button" data-view="support"><span aria-hidden="true">◉</span> Support</button>
+      <button type="button" data-view="staff"><span aria-hidden="true">▣</span> Staff desk</button>
+    </nav>
+    <div class="rail-footer"><span class="status-dot"></span> Fictional demo data</div>
+  </aside>
+  <div class="workspace">
+    <header class="bar">
+      <div class="breadcrumb"><span>Store desk</span><span aria-hidden="true">/</span><strong id="view-name">Catalogue</strong></div>
+      <div class="bar-actions"><span class="identity" id="identity">Guest</span><button id="jump-chat" type="button" class="outline">Open assistant</button></div>
+    </header>
+    <div class="workspace-grid">
+      <main id="main" tabindex="-1">
+        <section id="catalogue-view" aria-labelledby="store-title">
+          <div class="store-header">
+            <div class="store-copy"><p id="store-specialty">Home &amp; workspace</p><h1 id="store-title">Nook &amp; Loom</h1>
+              <div class="hero-actions"><button type="button" class="accent" data-task="track_order">Track an order</button><button type="button" class="on-dark" data-task="policy_question">Store policies</button></div>
+            </div>
+            <div class="store-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+          <section aria-labelledby="catalogue-title" class="catalogue">
+            <div class="section-head"><h2 id="catalogue-title">Catalogue</h2><span id="product-count" role="status"></span></div>
+            <form id="catalogue-form" class="filters">
+              <label class="query"><span class="sr-only">Search products</span><input id="query" placeholder="Search by name or SKU" maxlength="120"></label>
+              <button type="submit" class="ink-button">Find</button>
+              <details><summary>Filters</summary><div class="facet-grid">
+                <label>Category<select id="category"><option value="">All categories</option></select></label>
+                <label>Brand<select id="brand"><option value="">All brands</option></select></label>
+                <label>Max price in ₹<input id="maximum" inputmode="numeric" maxlength="6"></label>
+                <label class="check"><input id="available" type="checkbox"> In stock only</label>
+                <button type="submit" class="outline">Apply filters</button>
+              </div></details>
+            </form>
+            <p class="error" id="catalogue-error" hidden></p>
+            <div class="compare-tools" id="compare-tools" hidden><span id="compare-count"></span><button class="outline" id="compare" type="button" disabled>Compare selected</button></div>
+            <div id="products" class="product-grid"></div>
+          </section>
+        </section>
+        <section id="orders-view" aria-labelledby="orders-title" hidden>
+          <div class="section-head section-top"><h1 id="orders-title">Orders</h1></div>
+          <p id="order-help" class="guidance">Verify a demo profile in the assistant to see its orders.</p>
+          <div class="task-grid" id="order-actions">
+            <button type="button" data-task="track_order">Track an order<span>Shipment status and order items</span></button>
+            <button type="button" data-task="cancel_order">Cancel an order<span>Review eligibility before confirming</span></button>
+            <button type="button" data-task="modify_order">Change delivery preference<span>Choose an available delivery option</span></button>
+            <button type="button" data-task="request_return">Request a return or replacement<span>Check the store’s return window</span></button>
+            <button type="button" data-task="refund_status">Check refund status<span>Read the provider’s recorded status</span></button>
+          </div>
+          <div id="orders" class="record-list"></div>
+        </section>
+        <section id="support-view" aria-labelledby="support-title" hidden>
+          <div class="section-head section-top"><h1 id="support-title">Support</h1></div>
+          <div class="task-grid">
+            <button type="button" data-task="policy_question">Ask about a store policy<span>Shipping, return windows and warranties</span></button>
+            <button type="button" data-task="create_ticket">Open a support ticket<span>Send a case to the store’s queue</span></button>
+            <button type="button" data-task="request_human">Talk to an agent<span>Request a human follow-up</span></button>
+            <button type="button" data-task="ticket_status">Check a ticket<span>Read case status and staff replies</span></button>
+          </div>
+        </section>
+        <section id="staff-view" aria-labelledby="staff-title" hidden>
+          <div class="section-head section-top"><h1 id="staff-title">Staff desk</h1></div>
+          <form id="staff-login" class="staff-login">
+            <h2>Demo staff sign-in</h2>
+            <p id="staff-hint" class="guidance"></p>
+            <label>Staff ID<input id="staff-user" maxlength="32" required autocomplete="off"></label>
+            <label>Demo PIN<input id="staff-pin" type="password" inputmode="numeric" maxlength="4" required autocomplete="off"></label>
+            <button type="submit" class="ink-button">Sign in</button>
+          </form>
+          <p id="staff-error" class="error" role="alert" hidden></p>
+          <div id="staff-controls" hidden><div class="section-head"><h2>Ticket queue</h2><button type="button" id="staff-logout" class="outline">Sign out</button></div>
+            <div id="queue" class="record-list"></div><div id="ticket-detail" hidden></div>
+            <section id="metrics" aria-labelledby="metrics-title" hidden><h2 id="metrics-title">Store activity</h2><dl id="metric-values"></dl></section>
+          </div>
+        </section>
+      </main>
+      <aside id="assistant" class="assistant" aria-labelledby="assistant-title" tabindex="-1">
+        <header class="assistant-header"><div><h2 id="assistant-title">Assistant</h2><p id="assistant-status" aria-live="polite">Connecting</p></div><button id="new-chat" type="button" class="outline">New chat</button></header>
+        <div id="conversation" class="conversation" role="log" aria-live="polite" aria-label="Conversation"></div>
+        <div class="assistant-tools">
+          <div id="inbox" class="inbox" hidden><div><strong>Demo inbox</strong><span id="inbox-note"></span></div><button id="use-code" type="button" class="outline" hidden></button></div>
+          <div id="choices" class="choices" aria-label="Assistant suggestions"></div>
+          <p class="error" id="chat-error" role="alert" hidden></p>
+          <button type="button" id="retry-chat" class="outline" hidden>Retry last turn</button>
+          <form id="composer" class="compose"><label class="sr-only" for="message">Your message</label><input id="message" placeholder="Ask about this store" maxlength="400" autocomplete="off" required disabled><button id="send" type="submit" class="accent" disabled>Send <span aria-hidden="true">↑</span></button></form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

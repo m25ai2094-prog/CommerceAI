@@ -1,0 +1,21 @@
+recipe: default.v1
+language: en
+assistant_id: commerceai-rishabh
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: CountVectorsFeaturizer
+    analyzer: word
+    min_ngram: 1
+    max_ngram: 2
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 3
+    max_ngram: 5
+  - name: DIETClassifier
+    epochs: 65
+    random_seed: 42
+    entity_recognition: false
+    constrain_similarities: true
+  - name: FallbackClassifier
+    threshold: 0.40
+    ambiguity_threshold: 0.06

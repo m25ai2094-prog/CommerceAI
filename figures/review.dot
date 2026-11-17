@@ -1,0 +1,19 @@
+digraph review {
+  graph [bgcolor="white", rankdir=TB, nodesep=.31, ranksep=.42, pad=.22];
+  node [shape=box, style="rounded,filled", color="#59756b", fillcolor="#edf1e8", fontname="DejaVu Sans", fontsize=12, margin=".20,.10"];
+  edge [color="#556a63", fontname="DejaVu Sans", fontsize=9, arrowsize=.66];
+  ask [label="Verified owner selects an order"];
+  quote [label="Read eligibility and applicable policy"];
+  draft [label="Show store, order and proposed action", fillcolor="#f7e8d7"];
+  confirm [label="Explicit Confirm"];
+  check [label="BEGIN IMMEDIATE\nRecheck ownership, state and draft token"];
+  finish [label="Provider state, saved result and audit commit", fillcolor="#dcece0"];
+  reject [label="Reject with a reason", fillcolor="#f2e1d7"];
+  discard [label="Discard draft"];
+  ask -> quote -> draft -> confirm -> check -> finish;
+  quote -> reject [label="ineligible", constraint=false];
+  draft -> discard [label="Cancel draft", constraint=false];
+  check -> reject [label="state changed", constraint=false];
+  {rank=same;draft;discard}
+  {rank=same;check;reject}
+}

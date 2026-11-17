@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: commerceai-demo
+    runtime: python
+    plan: free
+    buildCommand: echo "No third-party runtime dependencies required"
+    startCommand: python run.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PYTHON_VERSION
+        value: 3.12.0

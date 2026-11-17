@@ -1,0 +1,187 @@
+scenario,group,event,ms
+Product search and comparison,Catalogue,ask_compare,2.148
+Product search and comparison,Catalogue,compare_invalid,1.523
+Product search and comparison,Catalogue,comparison_ready,3.766
+Product search and comparison,Catalogue,ask_search,2.166
+Product search and comparison,Catalogue,products_found,1.917
+Typed track request and shipment record,Orders,ask_identity,2.061
+Typed track request and shipment record,Orders,code_issued,1.362
+Typed track request and shipment record,Orders,ask_order,1.582
+Typed track request and shipment record,Orders,order_tracked,2.178
+Anonymous and other-customer order denial,Isolation,ask_identity,1.952
+Anonymous and other-customer order denial,Isolation,code_issued,1.786
+Anonymous and other-customer order denial,Isolation,ask_order,1.607
+Anonymous and other-customer order denial,Isolation,rejected,1.453
+Anonymous and other-customer order denial,Isolation,rejected,1.44
+Tenant switch and colliding order reference,Isolation,ask_identity,1.851
+Tenant switch and colliding order reference,Isolation,code_issued,1.328
+Tenant switch and colliding order reference,Isolation,ask_order,1.192
+Tenant switch and colliding order reference,Isolation,order_tracked,1.824
+Tenant switch and colliding order reference,Isolation,ask_identity,2.319
+Tenant switch and colliding order reference,Isolation,code_issued,1.634
+Tenant switch and colliding order reference,Isolation,ask_order,1.489
+Tenant switch and colliding order reference,Isolation,order_tracked,1.892
+"OTP scope, cooldown, expiry and lock",Verification,ask_identity,2.469
+"OTP scope, cooldown, expiry and lock",Verification,code_issued,1.394
+"OTP scope, cooldown, expiry and lock",Verification,discarded,1.062
+"OTP scope, cooldown, expiry and lock",Verification,ask_identity,1.934
+"OTP scope, cooldown, expiry and lock",Verification,code_issued,1.301
+"OTP scope, cooldown, expiry and lock",Verification,code_cooldown,1.224
+"OTP scope, cooldown, expiry and lock",Verification,code_format,1.132
+"OTP scope, cooldown, expiry and lock",Verification,code_expired,0.997
+"OTP scope, cooldown, expiry and lock",Verification,code_issued,1.452
+"OTP scope, cooldown, expiry and lock",Verification,code_wrong,1.039
+"OTP scope, cooldown, expiry and lock",Verification,code_wrong,1.127
+"OTP scope, cooldown, expiry and lock",Verification,code_locked,1.08
+"OTP scope, cooldown, expiry and lock",Verification,code_locked,1.538
+Expired verified grant and saved reply,Verification,ask_identity,1.979
+Expired verified grant and saved reply,Verification,code_issued,1.372
+Expired verified grant and saved reply,Verification,ask_order,1.88
+Expired verified grant and saved reply,Verification,review,2.173
+Expired verified grant and saved reply,Verification,confirm_required,0.984
+Expired verified grant and saved reply,Verification,verification_expired,1.062
+Confirmed cancellation and replay,Orders,ask_identity,2.066
+Confirmed cancellation and replay,Orders,code_issued,2.186
+Confirmed cancellation and replay,Orders,ask_order,2.122
+Confirmed cancellation and replay,Orders,review,1.999
+Confirmed cancellation and replay,Orders,confirm_required,1.215
+Confirmed cancellation and replay,Orders,confirmed,1.911
+Confirmed cancellation and replay,Orders,confirmed,0.946
+Dispatched order and discarded draft,Orders,ask_identity,2.016
+Dispatched order and discarded draft,Orders,code_issued,1.316
+Dispatched order and discarded draft,Orders,ask_order,1.395
+Dispatched order and discarded draft,Orders,rejected,1.576
+Dispatched order and discarded draft,Orders,review,1.816
+Dispatched order and discarded draft,Orders,discarded,1.322
+Concurrent cancellation confirmation,Orders,ask_identity,2.273
+Concurrent cancellation confirmation,Orders,code_issued,1.25
+Concurrent cancellation confirmation,Orders,ask_order,1.583
+Concurrent cancellation confirmation,Orders,review,2.05
+Concurrent cancellation confirmation,Orders,ask_identity,1.821
+Concurrent cancellation confirmation,Orders,code_issued,1.514
+Concurrent cancellation confirmation,Orders,ask_order,1.48
+Concurrent cancellation confirmation,Orders,review,1.779
+Concurrent cancellation confirmation,Orders,confirmed,2.156
+Concurrent cancellation confirmation,Orders,rejected,3.606
+Delivery preference validation,Orders,ask_identity,2.161
+Delivery preference validation,Orders,code_issued,1.508
+Delivery preference validation,Orders,ask_order,1.313
+Delivery preference validation,Orders,ask_preference,1.457
+Delivery preference validation,Orders,invalid_choice,1.07
+Delivery preference validation,Orders,review,2.101
+Delivery preference validation,Orders,confirmed,1.793
+Replacement intake and status,After-sales,ask_identity,2.121
+Replacement intake and status,After-sales,code_issued,1.37
+Replacement intake and status,After-sales,ask_order,1.796
+Replacement intake and status,After-sales,ask_item,1.86
+Replacement intake and status,After-sales,ask_reason,1.389
+Replacement intake and status,After-sales,ask_resolution,1.128
+Replacement intake and status,After-sales,review,1.878
+Replacement intake and status,After-sales,confirmed,1.928
+Replacement intake and status,After-sales,ask_order,2.027
+Replacement intake and status,After-sales,order_tracked,1.888
+Different return windows across stores,After-sales,ask_identity,1.793
+Different return windows across stores,After-sales,code_issued,1.401
+Different return windows across stores,After-sales,ask_order,1.434
+Different return windows across stores,After-sales,ask_item,1.291
+Different return windows across stores,After-sales,ask_reason,1.464
+Different return windows across stores,After-sales,ask_resolution,1.138
+Different return windows across stores,After-sales,rejected,1.298
+Different return windows across stores,After-sales,ask_identity,1.719
+Different return windows across stores,After-sales,code_issued,1.409
+Different return windows across stores,After-sales,ask_order,1.334
+Different return windows across stores,After-sales,ask_item,1.593
+Different return windows across stores,After-sales,ask_reason,1.263
+Different return windows across stores,After-sales,ask_resolution,1.066
+Different return windows across stores,After-sales,review,1.569
+Different return windows across stores,After-sales,confirmed,2.12
+Personalised line exclusion,After-sales,ask_identity,1.985
+Personalised line exclusion,After-sales,code_issued,1.319
+Personalised line exclusion,After-sales,ask_order,1.526
+Personalised line exclusion,After-sales,ask_item,1.317
+Personalised line exclusion,After-sales,ask_reason,1.386
+Personalised line exclusion,After-sales,ask_resolution,1.084
+Personalised line exclusion,After-sales,rejected,1.325
+Provider refund status is read-only,After-sales,ask_identity,1.841
+Provider refund status is read-only,After-sales,code_issued,1.226
+Provider refund status is read-only,After-sales,ask_order,1.562
+Provider refund status is read-only,After-sales,refund_read,1.96
+Provider refund status is read-only,After-sales,ask_order,1.735
+Provider refund status is read-only,After-sales,refund_missing,1.587
+Provider refund status is read-only,After-sales,ask_identity,1.837
+Provider refund status is read-only,After-sales,code_issued,1.249
+Provider refund status is read-only,After-sales,ask_order,1.749
+Provider refund status is read-only,After-sales,refund_read,1.785
+Provider refund status is read-only,After-sales,ask_order,2.025
+Provider refund status is read-only,After-sales,refund_missing,1.639
+Provider outage and retry,Orders,ask_identity,2.011
+Provider outage and retry,Orders,code_issued,1.334
+Provider outage and retry,Orders,provider_unavailable,1.435
+Provider outage and retry,Orders,provider_unavailable,1.244
+Provider outage and retry,Orders,ask_identity,2.03
+Provider outage and retry,Orders,code_issued,1.376
+Provider outage and retry,Orders,ask_order,1.241
+Provider outage and retry,Orders,order_tracked,1.563
+Tenant citations for the same policy question,Knowledge,ask_policy,1.664
+Tenant citations for the same policy question,Knowledge,policy_answer,1.671
+Tenant citations for the same policy question,Knowledge,ask_policy,1.72
+Tenant citations for the same policy question,Knowledge,policy_answer,2.058
+Missing and conflicting policy evidence,Knowledge,ask_policy,1.796
+Missing and conflicting policy evidence,Knowledge,policy_abstain,2.007
+Missing and conflicting policy evidence,Knowledge,ask_policy,2.114
+Missing and conflicting policy evidence,Knowledge,policy_abstain,1.892
+"Agent claim, reply, resolution and tenant denial",Support,ask_identity,2.068
+"Agent claim, reply, resolution and tenant denial",Support,code_issued,1.298
+"Agent claim, reply, resolution and tenant denial",Support,ask_category,1.009
+"Agent claim, reply, resolution and tenant denial",Support,ask_details,1.21
+"Agent claim, reply, resolution and tenant denial",Support,review,1.042
+"Agent claim, reply, resolution and tenant denial",Support,confirmed,1.914
+"Agent claim, reply, resolution and tenant denial",Support,ask_ticket,1.867
+"Agent claim, reply, resolution and tenant denial",Support,ticket_read,1.706
+Duplicate human handoff,Support,ask_identity,2.272
+Duplicate human handoff,Support,code_issued,1.318
+Duplicate human handoff,Support,ask_category,1.04
+Duplicate human handoff,Support,ask_details,1.18
+Duplicate human handoff,Support,review,0.995
+Duplicate human handoff,Support,confirmed,2.275
+Duplicate human handoff,Support,ask_category,1.76
+Duplicate human handoff,Support,ask_details,1.021
+Duplicate human handoff,Support,review,1.162
+Duplicate human handoff,Support,confirmed,1.72
+Staff role and assignment checks,Support,ask_identity,1.895
+Staff role and assignment checks,Support,code_issued,1.524
+Staff role and assignment checks,Support,ask_category,1.411
+Staff role and assignment checks,Support,ask_details,1.106
+Staff role and assignment checks,Support,review,1.187
+Staff role and assignment checks,Support,confirmed,1.982
+Scoped counters and p95,Analytics,ask_identity,2.235
+Scoped counters and p95,Analytics,code_issued,1.608
+Scoped counters and p95,Analytics,ask_category,1.214
+Scoped counters and p95,Analytics,ask_details,1.024
+Scoped counters and p95,Analytics,review,1.124
+Scoped counters and p95,Analytics,confirmed,2.032
+Pseudonymous append-only audit,Audit,ask_identity,2.201
+Pseudonymous append-only audit,Audit,code_issued,1.506
+Pseudonymous append-only audit,Audit,ask_category,1.29
+Pseudonymous append-only audit,Audit,ask_details,1.189
+Pseudonymous append-only audit,Audit,review,1.281
+Pseudonymous append-only audit,Audit,confirmed,2.18
+Restart persistence,Orders,ask_identity,2.217
+Restart persistence,Orders,code_issued,1.353
+Restart persistence,Orders,ask_order,1.32
+Restart persistence,Orders,review,1.839
+Restart persistence,Orders,confirmed,1.903
+Verified order follow-up and reset,Interface,ask_identity,2.046
+Verified order follow-up and reset,Interface,code_issued,1.527
+Verified order follow-up and reset,Interface,ask_order,1.537
+Verified order follow-up and reset,Interface,order_tracked,1.604
+Verified order follow-up and reset,Interface,refund_read,2.962
+Verified order follow-up and reset,Interface,ask_identity,2.136
+Verified order follow-up and reset,Interface,code_issued,1.309
+Verified order follow-up and reset,Interface,ask_order,1.514
+Repeated fallback recovery,Interface,fallback,1.611
+Repeated fallback recovery,Interface,fallback,2.333
+Rasa parse adapter contract,Interface,ask_identity,2.646
+Rasa parse adapter contract,Interface,code_issued,1.385
+Rasa parse adapter contract,Interface,ask_order,1.185
+Rasa parse adapter contract,Interface,order_tracked,2.134

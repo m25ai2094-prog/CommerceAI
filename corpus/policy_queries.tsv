@@ -1,0 +1,33 @@
+tenant	topic	text
+nook	shipping	What are the shipping charges below the free delivery threshold?
+nook	shipping	What is the minimum order for free postage?
+nook	returns	How many days is the return window after delivery?
+nook	returns	Can I send back a personalised engraved item?
+nook	warranty	Does the manufacturer warranty cover a defect?
+nook	warranty	How many months is the product guarantee?
+nook	refund	When does the refund credit reach the original payment method?
+nook	cancellation	Can I cancel a packed order before dispatch?
+nook	changes	How do I update my delivery instructions to leave it at reception?
+nook	payments	Are UPI payments accepted during checkout?
+nook	support	What hours does the customer service desk work?
+nook	returns	Can I request a replacement for a wrong item?
+trail	shipping	What does standard courier delivery cost below the minimum?
+trail	shipping	Is there free shipping above a threshold?
+trail	returns	How many days do I have to return a damaged item?
+trail	returns	Can personalised engraved tags be sent back?
+trail	warranty	What is the guarantee on manufacturing defects?
+trail	warranty	How long is the warranty coverage?
+trail	refund	How long is refund processing after approval?
+trail	cancellation	When can I cancel my order before it is dispatched?
+trail	changes	Can I change delivery preference to call on arrival?
+trail	payments	Can I pay with a credit card or UPI?
+trail	support	When is the support desk open over the weekend?
+trail	returns	Can I exchange a wrong item for a replacement?
+nook	ABSTAIN	Can you recommend a tax consultant?
+nook	ABSTAIN	What is the exchange rate for Canadian dollars?
+nook	ABSTAIN	What does the weather look like tomorrow?
+nook	ABSTAIN	Can you provide international shipping to Iceland?
+trail	ABSTAIN	What size battery runs a solar telescope?
+trail	ABSTAIN	Do you support bitcoin as a cryptocurrency?
+trail	ABSTAIN	Who is CEO of the courier company?
+trail	ABSTAIN	What are the warranties of a different store named Nook?

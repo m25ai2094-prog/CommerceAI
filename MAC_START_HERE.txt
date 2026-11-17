@@ -1,0 +1,22 @@
+COMMERCEAI — macOS QUICK START
+
+1. Extract this ZIP file.
+2. Open the CommerceAI folder.
+3. Make sure Python 3.10 or newer is installed. Check in Terminal:
+      python3 --version
+   If needed, install Python 3 from https://www.python.org/downloads/macos/
+4. Double-click Start_CommerceAI.command.
+   If macOS blocks it, right-click the file, choose Open, then confirm Open.
+5. The app should open in your browser at http://127.0.0.1:8790
+6. Keep the Terminal window open while using the app.
+7. To stop the server, click the Terminal window and press Control+C.
+
+If port 8790 is already in use, open Terminal in this CommerceAI folder and run:
+      python3 run.py --port 8791 --open
+Then visit http://127.0.0.1:8791
+
+The normal application runtime uses Python's standard library and the bundled model;
+no pip install is required for the standard demo. Training and optional Rasa setup
+are separate advanced tasks described in README.md.
+
+All stores, users, PINs, orders, stock, payments and policies are synthetic demo data.

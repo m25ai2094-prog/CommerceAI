@@ -1,0 +1,947 @@
+{
+  "run_utc": "2026-11-15T09:19:00+00:00",
+  "fixture_date": "2026-11-15",
+  "python": "3.12.14",
+  "machine": "x86_64",
+  "system": "Linux",
+  "sqlite": "3.53.1",
+  "model_sha256": "5675ac3a41ab8d3cd2d60238208df615956b4e26bc4380c90d91a3c122f17916",
+  "classes": [
+    "cancel_order",
+    "compare_products",
+    "create_ticket",
+    "goodbye",
+    "greet",
+    "modify_order",
+    "out_of_scope",
+    "policy_question",
+    "refund_status",
+    "request_human",
+    "request_return",
+    "search_product",
+    "ticket_status",
+    "track_order"
+  ],
+  "training": {
+    "train": 224,
+    "heldout": 112,
+    "features": 2905,
+    "word_features": 1081,
+    "char_features": 1824,
+    "folds": 4,
+    "seed": 42,
+    "training_cv_macro_f1": 0.6631227199879577,
+    "C": 10,
+    "minimum": 0.14,
+    "ambiguity": 0.01,
+    "sklearn": "1.8.0"
+  },
+  "nlu": {
+    "correct": 92,
+    "total": 112,
+    "accuracy": 0.8214285714285714,
+    "macro_f1": 0.8279309159561261,
+    "by_intent": [
+      {
+        "label": "cancel_order",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      {
+        "label": "compare_products",
+        "tp": 7,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      {
+        "label": "create_ticket",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "f1": 0.823529411764706
+      },
+      {
+        "label": "goodbye",
+        "tp": 8,
+        "support": 8,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.888888888888889
+      },
+      {
+        "label": "greet",
+        "tp": 8,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "label": "modify_order",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "f1": 0.823529411764706
+      },
+      {
+        "label": "out_of_scope",
+        "tp": 5,
+        "support": 8,
+        "precision": 0.4166666666666667,
+        "recall": 0.625,
+        "f1": 0.5
+      },
+      {
+        "label": "policy_question",
+        "tp": 5,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692307692307693
+      },
+      {
+        "label": "refund_status",
+        "tp": 7,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      {
+        "label": "request_human",
+        "tp": 7,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      {
+        "label": "request_return",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      {
+        "label": "search_product",
+        "tp": 5,
+        "support": 8,
+        "precision": 0.8333333333333334,
+        "recall": 0.625,
+        "f1": 0.7142857142857143
+      },
+      {
+        "label": "ticket_status",
+        "tp": 7,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      {
+        "label": "track_order",
+        "tp": 5,
+        "support": 8,
+        "precision": 0.5555555555555556,
+        "recall": 0.625,
+        "f1": 0.5882352941176471
+      }
+    ],
+    "matrix": [
+      [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
+      ]
+    ]
+  },
+  "baseline": {
+    "correct": 88,
+    "total": 112,
+    "accuracy": 0.7857142857142857,
+    "macro_f1": 0.7764453554701233,
+    "by_intent": [
+      {
+        "label": "cancel_order",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      {
+        "label": "compare_products",
+        "tp": 8,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "label": "create_ticket",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "f1": 0.823529411764706
+      },
+      {
+        "label": "goodbye",
+        "tp": 8,
+        "support": 8,
+        "precision": 0.7272727272727273,
+        "recall": 1.0,
+        "f1": 0.8421052631578948
+      },
+      {
+        "label": "greet",
+        "tp": 7,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      {
+        "label": "modify_order",
+        "tp": 6,
+        "support": 8,
+        "precision": 0.6666666666666666,
+        "recall": 0.75,
+        "f1": 0.7058823529411765
+      },
+      {
+        "label": "out_of_scope",
+        "tp": 3,
+        "support": 8,
+        "precision": 0.5,
+        "recall": 0.375,
+        "f1": 0.42857142857142855
+      },
+      {
+        "label": "policy_question",
+        "tp": 4,
+        "support": 8,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285715
+      },
+      {
+        "label": "refund_status",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      {
+        "label": "request_human",
+        "tp": 7,
+        "support": 8,
+        "precision": 0.7,
+        "recall": 0.875,
+        "f1": 0.7777777777777777
+      },
+      {
+        "label": "request_return",
+        "tp": 8,
+        "support": 8,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.888888888888889
+      },
+      {
+        "label": "search_product",
+        "tp": 4,
+        "support": 8,
+        "precision": 0.8,
+        "recall": 0.5,
+        "f1": 0.6153846153846154
+      },
+      {
+        "label": "ticket_status",
+        "tp": 8,
+        "support": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "label": "track_order",
+        "tp": 4,
+        "support": 8,
+        "precision": 0.5714285714285714,
+        "recall": 0.5,
+        "f1": 0.5333333333333333
+      }
+    ],
+    "matrix": [
+      [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        3,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        4,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    ]
+  },
+  "retrieval": {
+    "queries": 32,
+    "answerable": 24,
+    "unanswerable": 8,
+    "latency": {
+      "count": 32,
+      "median_ms": 0.378,
+      "p95_ms": 0.576,
+      "mean_ms": 0.41,
+      "max_ms": 0.692
+    },
+    "bm25": {
+      "correct_topic": 24,
+      "correct_abstain": 8,
+      "answers": 24,
+      "recall_at_one": 1.0,
+      "selective_precision": 1.0,
+      "decision_accuracy": 1.0
+    },
+    "overlap": {
+      "correct_topic": 24,
+      "correct_abstain": 3,
+      "answers": 29,
+      "recall_at_one": 1.0,
+      "selective_precision": 0.8275862068965517,
+      "decision_accuracy": 0.84375
+    }
+  },
+  "http_latency": {
+    "count": 186,
+    "median_ms": 1.5825,
+    "p95_ms": 2.272,
+    "mean_ms": 1.6475645161290322,
+    "max_ms": 3.766
+  },
+  "nlu_latency": {
+    "count": 112,
+    "median_ms": 0.0938,
+    "p95_ms": 0.1684,
+    "mean_ms": 0.09823660714285715,
+    "max_ms": 0.3982
+  },
+  "workflows": {
+    "passed": 28,
+    "total": 28,
+    "cases": [
+      {
+        "group": "Interface",
+        "name": "Browser bootstrap and origin guard",
+        "status": "PASS",
+        "observed": "Browser assets and an HTTP-only session loaded. A foreign origin was refused."
+      },
+      {
+        "group": "Catalogue",
+        "name": "Facets and store-specific search",
+        "status": "PASS",
+        "observed": "Brand, category, whole-rupee price and availability filters respected the current store."
+      },
+      {
+        "group": "Catalogue",
+        "name": "Product search and comparison",
+        "status": "PASS",
+        "observed": "Search returned an exact catalogue record. Comparison rejected a foreign SKU."
+      },
+      {
+        "group": "Orders",
+        "name": "Typed track request and shipment record",
+        "status": "PASS",
+        "observed": "A typed opening led to verification, then an owned shipment snapshot."
+      },
+      {
+        "group": "Isolation",
+        "name": "Anonymous and other-customer order denial",
+        "status": "PASS",
+        "observed": "Anonymous orders were denied. Both foreign and nonexistent references produced ownership-safe messages."
+      },
+      {
+        "group": "Isolation",
+        "name": "Tenant switch and colliding order reference",
+        "status": "PASS",
+        "observed": "Switching stores revoked the former cookie and required verification. A colliding reference returned tenant-specific items."
+      },
+      {
+        "group": "Verification",
+        "name": "OTP scope, cooldown, expiry and lock",
+        "status": "PASS",
+        "observed": "Challenge secrecy, cooldown, malformed input, expiry and three-wrong-code lock all held."
+      },
+      {
+        "group": "Verification",
+        "name": "Expired verified grant and saved reply",
+        "status": "PASS",
+        "observed": "The expired grant blocked cached protected data and a pending write."
+      },
+      {
+        "group": "Orders",
+        "name": "Confirmed cancellation and replay",
+        "status": "PASS",
+        "observed": "Confirmation changed one owned provider row. Retry replayed it and conflicting content was rejected."
+      },
+      {
+        "group": "Orders",
+        "name": "Dispatched order and discarded draft",
+        "status": "PASS",
+        "observed": "Dispatched orders were ineligible and discarding a draft wrote no operation."
+      },
+      {
+        "group": "Orders",
+        "name": "Concurrent cancellation confirmation",
+        "status": "PASS",
+        "observed": "Two independently verified drafts competed. Exactly one confirmation committed."
+      },
+      {
+        "group": "Orders",
+        "name": "Delivery preference validation",
+        "status": "PASS",
+        "observed": "The selected preference persisted after review. Arbitrary address text was refused."
+      },
+      {
+        "group": "After-sales",
+        "name": "Replacement intake and status",
+        "status": "PASS",
+        "observed": "The replacement case included its policy version and reappeared in the owned order."
+      },
+      {
+        "group": "After-sales",
+        "name": "Different return windows across stores",
+        "status": "PASS",
+        "observed": "The same 20-day-old order was rejected by the 14-day store and accepted by the 30-day store."
+      },
+      {
+        "group": "After-sales",
+        "name": "Personalised line exclusion",
+        "status": "PASS",
+        "observed": "The active policy refused the engraved line and created no return."
+      },
+      {
+        "group": "After-sales",
+        "name": "Provider refund status is read-only",
+        "status": "PASS",
+        "observed": "Refund reads followed tenant-owned orders and caused no financial or provider mutation."
+      },
+      {
+        "group": "Orders",
+        "name": "Provider outage and retry",
+        "status": "PASS",
+        "observed": "The affected tenant received an unavailable reply and retry. The other store remained responsive."
+      },
+      {
+        "group": "Knowledge",
+        "name": "Tenant citations for the same policy question",
+        "status": "PASS",
+        "observed": "Both tenants answered the same question from different current evidence."
+      },
+      {
+        "group": "Knowledge",
+        "name": "Missing and conflicting policy evidence",
+        "status": "PASS",
+        "observed": "Unknown and conflicting evidence produced an abstention and an agent option."
+      },
+      {
+        "group": "Support",
+        "name": "Agent claim, reply, resolution and tenant denial",
+        "status": "PASS",
+        "observed": "Customer and assigned agent shared a redacted case. A foreign admin could neither read nor mutate it."
+      },
+      {
+        "group": "Support",
+        "name": "Duplicate human handoff",
+        "status": "PASS",
+        "observed": "A repeated handoff linked the same open case and counted one new escalation."
+      },
+      {
+        "group": "Support",
+        "name": "Staff role and assignment checks",
+        "status": "PASS",
+        "observed": "Tenant and role checks excluded a foreign credential, and another agent could not update the assigned ticket."
+      },
+      {
+        "group": "Analytics",
+        "name": "Scoped counters and p95",
+        "status": "PASS",
+        "observed": "Admin analytics published the activity counts and denominator for only the active tenant."
+      },
+      {
+        "group": "Audit",
+        "name": "Pseudonymous append-only audit",
+        "status": "PASS",
+        "observed": "Auditing stored pseudonym, target and correlation, and the database rejected in-place edits."
+      },
+      {
+        "group": "Orders",
+        "name": "Restart persistence",
+        "status": "PASS",
+        "observed": "A separate HTTP server and fresh browser session read the saved cancellation."
+      },
+      {
+        "group": "Interface",
+        "name": "Verified order follow-up and reset",
+        "status": "PASS",
+        "observed": "The remembered order resolved only inside its verified session. Reset removed that context."
+      },
+      {
+        "group": "Interface",
+        "name": "Repeated fallback recovery",
+        "status": "PASS",
+        "observed": "Repeated unrelated inputs offered human support without opening a case automatically."
+      },
+      {
+        "group": "Interface",
+        "name": "Rasa parse adapter contract",
+        "status": "PASS",
+        "observed": "The local parse stub received one redacted opening turn. Verification and order fields stayed local."
+      }
+    ]
+  }
+}

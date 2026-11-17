@@ -1,0 +1,2 @@
+# Rasa runs in a separate 64-bit Python 3.10 environment.
+rasa==3.6.21
